@@ -4,7 +4,7 @@ import bodyparser from "body-parser"
 import session from "express-session"
 import bcrypt from "bcrypt"
 
-import photoRouter from "./routes/photos.js"
+import router from "./routes/index.js"
 
 const app = express()
 const port = 3000
@@ -27,7 +27,7 @@ app.use(express.static("public"))
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
 
-app.use("/", photoRouter)
+app.use("/", router)
 
 app.listen(3000, () => {
     console.log("Server is running on http://localhost:3000/")
