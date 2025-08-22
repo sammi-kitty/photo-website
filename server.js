@@ -27,7 +27,7 @@ app.use(express.static("public"))
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
 
-app.use("/, photoRouter")
+app.use("/", photoRouter)
 
 app.listen(3000, () => {
     console.log("Server is running on http://localhost:3000/")
